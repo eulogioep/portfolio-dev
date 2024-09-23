@@ -2,17 +2,41 @@
 import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro';
 import Badge from '../components/Badge.astro';
+import LinkedInIcon from '../components/icons/LinkedIn.astro';
+import SocialPill from '../components/SocialPill.astro';
 ---
 
-<Layout title="Welcome to Astro.">
+<Layout title="Portafolio de EulogioEP - Desarrollador Web y Móvil">
 	<main>
 		<section class="w-full mx-auto lg:w-[740px] py-44">
-			<h1 class="text-white text-5xl font-bold  flex justify-center flex-row">
-				Hola 👋, Eulogio <div class="flex justify-center"></div>
+			<img 
+			class="rounded-full w-12 h-12 mb-4" 
+			src="https://avatars.githubusercontent.com/u/1092020?v=4" 
+			alt="EulogioEP Photo"
+			/>
+			<h1 class="text-white text-5xl font-bold flex flex-row gap-x-4 pb-4">
+				Hola 👋, soy Eulogio 
+				<a
+				 href="https://www.linkedin.com/in/eulogioep"
+				 target="_blank"
+				 rel="noopener"
+				 class="flex justify-center items-center">
+				<Badge>Disponible para trabajar</Badge>
+				</a>
 			</h1>
-			<h2>Desarrollador fulls-stack Web y Mobile. Resido en Sevilla, España.</h2>
+			<h2 class="text-2xl text-wrap">
+				<span class="text-green-300/90">Desarrollador full-stack</span>
+				<span class="text-yellow-100/90">titulado en CFGS DAM y CFGS DAW.</span>
+				<span class="text-red-200/90">Resido en Sevilla, España 🇪🇸</span>
+			</h2>
 
-			<ul></ul>
+			<nav class="flex gap-x-2">
+				<SocialPill href="https://www.linkedin.com/in/eulogioep">
+					<LinkedInIcon class="w-6 h-6"/>
+					LinkedIn
+				</SocialPill>
+
+			</nav>
 		</section>
 	</main>
 </Layout>
