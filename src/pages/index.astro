@@ -4,13 +4,19 @@ import Card from '../components/Card.astro';
 import Badge from '../components/Badge.astro';
 import LinkedInIcon from '../components/icons/LinkedIn.astro';
 import SocialPill from '../components/SocialPill.astro';
+import GitHubIcon from '../components/icons/GitHub.astro';
+import MailIcon from '../components/icons/Mail.astro';
+import Experience from '../components/Experience.astro';
+import SectionContainer from '../components/SectionContainer.astro';
 ---
 
-<Layout title="Portafolio de EulogioEP - Desarrollador Web y Móvil">
+<Layout 
+title="Portafolio de EulogioEP - Desarrollador Web y Móvil"
+description="Contrata a Eulogio para crear aplicaciones web o multiplataforma. Desarrollador full-stack.">
 	<main>
-		<section class="w-full mx-auto lg:w-[740px] py-44">
+		<SectionContainer>
 			<img 
-			class="rounded-full w-12 h-12 mb-4" 
+			class="rounded-full size-12 mb-4" 
 			src="https://avatars.githubusercontent.com/u/1092020?v=4" 
 			alt="EulogioEP Photo"
 			/>
@@ -30,13 +36,24 @@ import SocialPill from '../components/SocialPill.astro';
 				<span class="text-red-200/90">Resido en Sevilla, España 🇪🇸</span>
 			</h2>
 
-			<nav class="flex gap-x-2">
+			<nav class="flex gap-x-4 mt-8">
 				<SocialPill href="https://www.linkedin.com/in/eulogioep">
-					<LinkedInIcon class="w-6 h-6"/>
+					<LinkedInIcon class="size-6"/>
 					LinkedIn
+				</SocialPill>
+				<SocialPill href="https://www.github.com/eulogioep">
+					<GitHubIcon class="size-6"/>
+					GitHub
+				</SocialPill>
+				<SocialPill href="mailto:eulogioep@gmail.com">
+					<MailIcon class="size-6"/>
+					Contáctame
 				</SocialPill>
 
 			</nav>
-		</section>
+		</SectionContainer>
+		<SectionContainer>
+			<Experience />
+		</SectionContainer>
 	</main>
 </Layout>
