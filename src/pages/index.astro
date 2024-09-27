@@ -11,64 +11,52 @@ import SectionContainer from '../components/SectionContainer.astro';
 import Briefcase from '../components/icons/Briefcase.astro';
 import CodeIcon from '../components/icons/Code.astro';
 import Projects from '../components/Projects.astro';
+import SobreMi from '../components/SobreMi.astro';
+import ProfileCheck from '../components/icons/ProfileCheck.astro';
+import Hero from "../components/Hero.astro";
 ---
 
-<Layout 
-title="Portafolio de EulogioEP - Desarrollador Web y Móvil"
-description="Contrata a Eulogio para crear aplicaciones web o multiplataforma. Desarrollador full-stack.">
-	<main class="px-4">
-		<SectionContainer class="py-44 pb-32">
-			<img 
-			class="rounded-full size-12 mb-4" 
-			src="https://avatars.githubusercontent.com/u/1092020?v=4" 
-			alt="Fotografía de Eulogio"
-			/>
-			<h1 class="text-white text-3xl md:text-4xl lg:text-5xl font-bold flex flex-row gap-x-4 pb-6 lg:pb-10">
-				Hola 👋, soy Eulogio 
-				<a
-				 href="https://www.linkedin.com/in/eulogioep"
-				 target="_blank"
-				 rel="noopener"
-				 class="flex justify-center items-center">
-				<Badge>Disponible para trabajar</Badge>
-				</a>
-			</h1>
-			<h2 class="text-xl lg:text-2xl text-wrap max-w-[700px]">
-				<span class="text-green-300/90">Desarrollador full-stack</span>
-				<span class="text-yellow-100/90">titulado en CFGS DAM y CFGS DAW.</span><br/>
-				<span class="text-red-200/90">Resido en Sevilla, España.</span>
-			</h2>
 
-			<nav class="flex gap-4 mt-8 flex-wrap">
-				<SocialPill href="https://www.linkedin.com/in/eulogioep">
-					<LinkedInIcon class="size-4 md:size-6"/>
-					LinkedIn
-				</SocialPill>
-				<SocialPill href="https://www.github.com/eulogioep">
-					<GitHubIcon class="size-4 md:size-6"/>
-					GitHub
-				</SocialPill>
-				<SocialPill href="mailto:eulogioep@gmail.com">
-					<MailIcon class="size-4 md:size-6"/>
-					Contáctame
-				</SocialPill>
+<Layout
+  title="Portafolio de Daniel - Desarrollador y Programador Full-Stack"
+  description="Contrata a Daniel para crear tu aplicación web o multiplataforma. Desarrollador Full-Stack. Especializado en Java y Angular."
+>
+  <main class="px-4">
+    <SectionContainer class="py-16 md:py-36">
+      <Hero>
+      </slot>
+    </Hero>
+    </SectionContainer>
+    <div class="space-y-24">
+    <SectionContainer id="experiencia">
+      <h2
+        class="flex items-center mb-6 text-3xl font-semibold gap-x-3 text-black/80 dark:text-white"
+      >
+        <Briefcase class="size-8" />
+        Experiencia laboral
+      </h2>
+      <Experience />
+    </SectionContainer>
 
-			</nav>
-		</SectionContainer>
-		<SectionContainer id="experiencia">
-			<h2 class="text-2xl font-semibold mb-6  flex gap-x-3 items-center">
-				<Briefcase class="size-7"/>
-				Experiencia laboral
-			</h2>
-			<Experience />
-		</SectionContainer>
+    <SectionContainer id="proyectos">
+      <h2
+        class="flex items-center mb-6 text-3xl font-semibold gap-x-3 text-black/80 dark:text-white"
+      >
+        <CodeIcon class="size-7" />
+        Proyectos
+      </h2>
+      <Projects />
+    </SectionContainer>
 
-		<SectionContainer id="proyectos">
-			<h2 class="text-2xl font-semibold mb-6  flex gap-x-3 items-center">
-				<CodeIcon class="size-7"/>
-				Proyectos
-			</h2>
-			<Projects />
-		</SectionContainer>
-	</main>
+    <SectionContainer id="sobre-mi">
+      <h2
+        class="flex items-center mb-6 text-3xl font-semibold gap-x-8 text-black/80 dark:text-white"
+      >
+        <ProfileCheck class="size-8" />
+        Sobre mí
+      </h2>
+      <SobreMi />
+    </SectionContainer>
+  </div>
+  </main>
 </Layout>

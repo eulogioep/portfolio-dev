@@ -1,27 +1,142 @@
 ---
+import Kotlin from "../components/icons/Kotlin.astro";
+import Android from "../components/icons/Android.astro";
+import HTML from "../components/icons/Html5.astro";
+import CSS from "../components/icons/Css.astro";
+import LinkButton from "./LinkButton.astro"
+import GitHub from "../components/icons/GitHub.astro";
+import Link from "../components/icons/Link.astro";
+import Java from "../components/icons/Java.astro";
+import Firebase from "./Firebase.astro";
+
+const TAGS = {
+
+  KOTLIN: {
+    name: "Kotlin",
+    class: "bg-black text-white",
+    icon: Kotlin,
+  },
+  HTML: {
+    name: "Html5",
+    class: "bg-black text-white",
+    icon: HTML,
+  },
+  CSS: {
+    name: "CSS3",
+    class: "bg-black text-white",
+    icon: CSS,
+  },
+  ANDROID: {
+    name: "Android Studio",
+    class: "text-white",
+    icon: Android,
+  },
+  JAVA: {
+    name: "Java V17",
+    class: "text-white",
+    icon: Java,
+  },
+  FIREBASE: {
+    name: "Firebase V9",
+    class: "text-white",
+    icon: Firebase,
+  },
+  
+
+}
+
 const PROJECTS = [
     {
-        title: "Project 1",
-        description: "Project 1 description",
-        link: "#",
-        github: "#",
-        image: "/projects/project-1.webp",
-        tags: ["HTML" ,"CSS", "JavaScript"]
-    }
+        title: "Portafolio Android",
+        description: "App Android realizada en Kotlin para practicar diferentes conceptos de desarrollo, como la navegación entre pantallas, CardView, Diseño de UI, Listeners, etc.",
+        link: "",
+        github: "https://github.com/eulogioep/curso_android_2024",
+        image: "/public/projects/portafolio-android.webp",
+        tags: [TAGS.KOTLIN, TAGS.ANDROID]
+    },
+    {
+        title: "Calculador IMC",
+        description: "App Android para calcular el índice de masa corporal (IMC) de una persona.",
+        link: "",
+        github: "https://github.com/eulogioep/curso_android_2024/tree/main/Aplicaciones/app/src/main/java/com/eulogioep/aplicaciones/imccalc",
+        image: "/public/projects/imc.webp",
+        tags: [TAGS.KOTLIN, TAGS.ANDROID]
+    },
+    {
+        title: "Organizador de Tareas",
+        description: "App Android TODO List con funcioanlidades de crear, editar y borrar tareas.",
+        link: "",
+        github: "https://github.com/eulogioep/curso_android_2024/tree/main/Aplicaciones/app/src/main/java/com/eulogioep/aplicaciones/todoapp",
+        image: "/public/projects/Tareas.webp",
+        tags: [TAGS.KOTLIN, TAGS.ANDROID]
+    },
+    {
+        title: "Buscador de Superhéroes",
+        description: "App Android para probar el consumo de API's con Retrofit. SearchView, Funciones Lambdas y RecyclerView.",
+        link: "",
+        github: "https://github.com/eulogioep/curso_android_2024/tree/main/Aplicaciones/app/src/main/java/com/eulogioep/aplicaciones/superheroapp",
+        image: "/public/projects/heroesapi.webp",
+        tags: [TAGS.KOTLIN, TAGS.ANDROID]
+    },
+    {
+        title: "Blog Café",
+        description: "Proyecto para crear una academia de preparación de diferentes tipos de café.",
+        link: "https://eulogioep.github.io/blog-cafe/",
+        github: "https://github.com/eulogioep/BlogCafe",
+        image: "/public/projects/blogcafe.webp",
+        tags: [TAGS.HTML, TAGS.CSS]
+    },
+
 ]
 ---
 
-{
-    PROJECTS.map(({title, description, tags, image}) => (
-        <article>
-            <h3>{title}</h3>
-            <p>{description}</p>
-            <ul>
-                {tags.map(tag =>(
-                    <li>{tag}</li>
-                ))}
-            </ul>
-            <img src={image} alt={"Captura de pantalla del proyecto ${image}"} />
-        </article>
+<div class="flex flex-col gap-y-16">
+  {
+    PROJECTS.map(({ image, title, description, tags, link, github }) => (
+    <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
+  <div class="w-full md:w-1/2">
+    <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
+      <img alt="Proyectos" class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105" src={image} />
+    </div>
+  </div>
+
+  <div class="w-full md:w-1/2 md:max-w-lg">
+    <h3 class="text-2xl font-bold text-gray-800 dark:text-gray-100">
+      {title}
+    </h3>
+    <div class="flex flex-wrap mt-2">
+      <ul class="flex flex-row mb-2 gap-x-2">
+          {tags?.map((tag) => (
+            <li>
+              <span
+                class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 `}
+              >
+                <tag.icon class="size-4" />
+                {tag.name}
+              </span>
+            </li>
+          ))}
+        </ul>
+
+      <div class="mt-2 text-gray-700 dark:text-gray-400">{description}</div>
+      <footer class="flex items-end justify-start mt-4 gap-x-4">
+          {github && (
+            <LinkButton href={github} target="_blank" rel="noopener noreferrer">
+              <GitHub class="size-6" />
+              Código
+              
+            </LinkButton>
+          )}
+          {link && (
+            <LinkButton href={link}>
+              <Link class="size-4" />
+              Preview
+            </LinkButton>
+          )}
+        </footer>
+    </div>
+  </div>
+</article>
     ))
-}
+  }
+</div>

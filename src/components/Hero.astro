@@ -1,0 +1,57 @@
+---
+import Gmail from "./icons/Mail.astro";
+import LinkedIn from "./icons/LinkedIn.astro";
+import SocialPill from "./SocialPill.astro";
+import Badge from "./Badge.astro";
+import GitHub from "./icons/GitHub.astro";
+
+const personalImageAlt = "Eulogio Enamorado Pallares";
+---
+
+<div class="max-w-xl">
+  <div class="flex gap-4 mb-4">
+    <div class="rounded-full shadow-lg overflow-hidden w-32 h-32">
+        <img
+            class="w-full h-full object-cover"
+            src="https://avatars.githubusercontent.com/u/1092020?v=4"
+            alt="Fotografía de Eulogio"
+        />
+    </div>
+    <a
+        href="https://www.linkedin.com/in/eulogioep"
+        target="_blank"
+        rel="noopener"
+        class="flex items-center transition md:justify-center md:hover:scale-105"
+    >
+        <Badge>Disponible para trabajar</Badge>
+    </a>
+</div>
+
+  <h1
+    class="text-4xl font-bold tracking-tight text-black-800 sm:text-5xl dark:text-white"
+  >
+  Hola 👋, soy Eulogio
+  </h1>
+  <p
+    class="mt-6 text-xl text-black-800 dark:[&>strong]:text-green-300 [&>strong]:text-green-500 [&>strong]:font-semibold dark:text-gray-300"
+  >
+    <span class="text-green-800 dark:text-green-300/90">Desarrollador full-stack</span>
+    <span class="text-black-400 dark:text-yellow-100/90">titulado en CFGS DAM y CFGS DAW.</span><br/>
+    <span class="text-red-400 dark:text-red-200/90">Resido en Sevilla, España.</span>
+  </p>
+  <nav class="flex flex-wrap gap-4 mt-8">
+    <SocialPill href="mailto:eulogioep@gmail.com">
+      <Gmail class="size-4" />
+      Contáctame
+    </SocialPill>
+    <SocialPill href="https://www.linkedin.com/in/eulogioep">
+      <LinkedIn class="size-4" />
+      LinkedIn
+    </SocialPill>
+    <SocialPill href="https://www.github.com/eulogioep">
+      <GitHub class="size-5" />
+      GitHub
+    </SocialPill>
+  </nav>
+  
+</div>
